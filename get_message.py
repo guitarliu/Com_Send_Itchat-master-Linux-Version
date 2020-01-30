@@ -16,7 +16,7 @@ def reply(msg):
 @newInstance.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
 def download_files(msg):
     print(msg.user['RemarkName'], ":", 'Received %s, look on phone' % msg.fileName)
-        msg.download(msg.fileName)
+    msg.download(msg.fileName)
 
 @newInstance.msg_register(TEXT, isGroupChat = True)
 def text_reply(msg):
