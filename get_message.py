@@ -16,7 +16,6 @@ def reply(msg):
 @newInstance.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
 def download_files(msg):
     print(msg.user['RemarkName'], ":", 'Received %s, look on phone' % msg.fileName)
-    if msg.fileName.split('.')[-1] != 'gif':
         msg.download(msg.fileName)
 
 @newInstance.msg_register(TEXT, isGroupChat = True)
